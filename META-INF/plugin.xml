@@ -1,0 +1,51 @@
+<idea-plugin>
+    <id>live.angular.switch.extension</id>
+    <name>angular-switch-extension</name>
+    <version>0.1</version>
+    <vendor email="asnowwolf@gmail.com" url="https://angular.cn">Zhicheng Wang</vendor>
+
+    <description><![CDATA[
+    Switch between files with the same path and base name but different extensions.
+    After installation, the "Next Angular file" / "Previous Angular file" menu will be added into the "Navigate" menu. It loops through templates, styles, components, and unit tests.
+
+    在文件路径和基本名相同, 但扩展名不同的文件之间切换。
+    安装后会在 Navigate 菜单下创建 "Next Angular file" / "Previous Angular file" 项。它会在组件的模板、样式、组件、单元测试几种文件之间循环切换。
+    ]]></description>
+
+    <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+
+    <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <group id="SwitchExtension">
+            <!-- Add your actions here -->
+            <action id="live.angular.actions.SwitchToNextFile"
+                    class="live.angular.actions.SwitchToNextFile" text="Next Angular file">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl L"/>
+            </action>
+            <action id="live.angular.actions.SwitchToPrevFile"
+                    class="live.angular.actions.SwitchToPrevFile" text="Previous Angular file">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift L"/>
+            </action>
+            <add-to-group group-id="GoToMenu" anchor="last"/>
+        </group>
+    </actions>
+
+</idea-plugin>
