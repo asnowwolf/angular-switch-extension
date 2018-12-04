@@ -10,6 +10,8 @@
 
     在文件路径和基本名相同, 但扩展名不同的文件之间切换。
     安装后会在 Navigate 菜单下创建 "Next Angular file" / "Previous Angular file" 项。它会在组件的模板、样式、组件、单元测试几种文件之间循环切换。
+
+    Source code: <https://github.com/asnowwolf/angular-switch-extension>.
     ]]></description>
 
     <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
