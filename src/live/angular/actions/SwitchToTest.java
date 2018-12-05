@@ -5,9 +5,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import live.angular.utils.ExtensionSwitcher;
 import org.jetbrains.annotations.NotNull;
 
-public class SwitchToPrevFile extends AnAction {
+public class SwitchToTest extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-        new ExtensionSwitcher(e).switchToNext(-1);
+        new ExtensionSwitcher(e).switchToTest();
     }
 }

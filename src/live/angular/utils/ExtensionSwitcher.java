@@ -20,38 +20,30 @@ public class ExtensionSwitcher {
         this.event = event;
     }
 
-    private final List<List<String>> typeGroups = Lists.newArrayList(
-            Lists.newArrayList("html"),
-            Lists.newArrayList("ts"),
-            Lists.newArrayList("spec.ts"),
-            Lists.newArrayList("css", "scss", "less", "styl")
-    );
+    private final List<String> templateExtensions = Lists.newArrayList("html");
+    private final List<String> componentExtensions = Lists.newArrayList("ts");
+    private final List<String> testExtensions = Lists.newArrayList("spec.ts");
+    private final List<String> styleExtensions = Lists.newArrayList("css", "scss", "less", "styl");
+    private final List<List<String>> groups = Lists.newArrayList(templateExtensions, componentExtensions, testExtensions, styleExtensions);
 
-    public void switchToNext(int step) {
-        // 找到当前扩展名的组号
-        String currentExtension = getCurrentFile().map(VirtualFile::getCanonicalPath).map(this::getExtension).get();
-        int groupIndex = groupIndexOf(currentExtension);
-        if (groupIndex == -1) {
-            return;
-        }
-        String basePath = getCurrentFile().map(VirtualFile::getCanonicalPath).map(this::getNameWithoutExtension).get();
-        // 切换到下一组，如果任何一组没有文件，则跳过
-        int nextIndex = groupIndex;
-        // 最多循环 typeGroup.size() 次，以免不小心出现死循环
-        for (int i = 0; i < typeGroups.size(); ++i) {
-            nextIndex = nextIndexOf(nextIndex, step);
-            List<String> nextGroup = typeGroups.get(nextIndex);
-            if (switchToGroup(nextGroup, basePath)) {
-                break;
-            }
-        }
+    public void switchToTemplate() {
+        switchToGroup(templateExtensions);
     }
 
-    int nextIndexOf(int nextIndex, int step) {
-        return (nextIndex + step + typeGroups.size()) % typeGroups.size();
+    public void switchToComponent() {
+        switchToGroup(componentExtensions);
     }
 
-    private boolean switchToGroup(List<String> nextGroup, String basePath) {
+    public void switchToStyle() {
+        switchToGroup(styleExtensions);
+    }
+
+    public void switchToTest() {
+        switchToGroup(testExtensions);
+    }
+
+    private boolean switchToGroup(List<String> nextGroup) {
+        String basePath = getCurrentBasePath();
         for (String extension : nextGroup) {
             Optional<VirtualFile> file = findFileByPath(basePath + "." + extension);
             if (file.isPresent()) {
@@ -62,21 +54,16 @@ public class ExtensionSwitcher {
         return false;
     }
 
-    int groupIndexOf(String extension) {
-        int groupIndex = -1;
-        for (int i = 0; i < typeGroups.size(); ++i) {
-            if (typeGroups.get(i).contains(extension)) {
-                groupIndex = i;
-            }
-        }
-        return groupIndex;
+    @NotNull
+    private String getCurrentBasePath() {
+        return getCurrentFile().map(VirtualFile::getCanonicalPath).map(this::getNameWithoutExtension).get();
     }
 
     String getExtension(String filename) {
         if (noExtension(filename)) {
             return "";
         }
-        List<String> types = typeGroups.stream()
+        List<String> types = groups.stream()
                 .flatMap(Collection::stream)
                 // 把字符串反转后再倒序排序，确保 spec.ts 排在 ts 前面
                 .sorted(Comparator.comparing(this::reverseText).reversed())

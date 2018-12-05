@@ -5,13 +5,33 @@
     <vendor email="asnowwolf@gmail.com" url="https://angular.cn">Zhicheng Wang</vendor>
 
     <description><![CDATA[
-    Switch between files with the same path and base name but different extensions.
-    After installation, the "Next Angular file" / "Previous Angular file" menu will be added into the "Navigate" menu. It loops through templates, styles, components, and unit tests.
+    <h2>Switch between files with the same file path and base name but different extensions. Typical is the Angular-style project structure.</h2>
+    <p> After installation, the "Locate Angular files" submenu will be created under the navigate menu, including options for switching to various related files. </p>
+    <p> Default shortcut: </p>
+    <ul>
+    <li>Press ctrl(cmd)+l,h to open html file</li>
+    <li>Press ctrl(cmd)+l,c to open Css file</li>
+    <li>Press ctrl(cmd)+l,t to open the ts file</li>
+    <li>Press ctrl(cmd)+l,s to open the spec.ts file</li>
+    </ul>
+    <p> source code: <https://github.com/asnowwolf/angular-switch-extension>. </p>
 
-    在文件路径和基本名相同, 但扩展名不同的文件之间切换。
-    安装后会在 Navigate 菜单下创建 "Next Angular file" / "Previous Angular file" 项。它会在组件的模板、样式、组件、单元测试几种文件之间循环切换。
-
-    Source code: <https://github.com/asnowwolf/angular-switch-extension>.
+    <h2>在文件路径和基本名相同, 但扩展名不同的文件之间切换。典型的就是 Angular 风格的项目结构。</h2>
+    <p>
+    安装后会在 navigate 菜单下创建 "Locate Angular files" 子菜单，其中包括切换到各个相关文件的选项。
+    </p>
+    <p>
+    默认快捷键：
+    </p>
+    <ul>
+    <li>按 ctrl(cmd)+l,h 打开 html 文件</li>
+    <li>按 ctrl(cmd)+l,c 打开 css 文件</li>
+    <li>按 ctrl(cmd)+l,t 打开 ts 文件</li>
+    <li>按 ctrl(cmd)+l,s 打开 spec.ts 文件</li>
+    </ul>
+    <p>
+    source code: <https://github.com/asnowwolf/angular-switch-extension>.
+    </p>
     ]]></description>
 
     <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
@@ -36,17 +56,25 @@
     </project-components>
 
     <actions>
-        <group id="SwitchExtension">
+        <group id="SwitchExtension" text="Locate Angular files" popup="true">
             <!-- Add your actions here -->
-            <action id="live.angular.actions.SwitchToNextFile"
-                    class="live.angular.actions.SwitchToNextFile" text="Next Angular file">
-                <keyboard-shortcut keymap="$default" first-keystroke="ctrl L"/>
+            <action id="live.angular.actions.SwitchToTemplate"
+                    class="live.angular.actions.SwitchToTemplate" text="*.html file">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="H"/>
             </action>
-            <action id="live.angular.actions.SwitchToPrevFile"
-                    class="live.angular.actions.SwitchToPrevFile" text="Previous Angular file">
-                <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift L"/>
+            <action id="live.angular.actions.SwitchToStyle"
+                    class="live.angular.actions.SwitchToStyle" text="*.css file">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="C"/>
             </action>
-            <add-to-group group-id="GoToMenu" anchor="last"/>
+            <action id="live.angular.actions.SwitchToTest"
+                    class="live.angular.actions.SwitchToTest" text="*.spec.ts file">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="S"/>
+            </action>
+            <action id="live.angular.actions.SwitchToComponent"
+                    class="live.angular.actions.SwitchToComponent" text="*.ts file">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="T"/>
+            </action>
+            <add-to-group group-id="GoToTargetEx" anchor="last"/>
         </group>
     </actions>
 
