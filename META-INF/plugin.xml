@@ -1,37 +1,31 @@
 <idea-plugin>
     <id>live.angular.switch.extension</id>
     <name>angular-switch-extension</name>
-    <version>0.2</version>
+    <version>0.2.1</version>
     <vendor email="asnowwolf@gmail.com" url="https://angular.cn">Zhicheng Wang</vendor>
 
     <description><![CDATA[
-    <h2>Switch between files with the same file path and base name but different extensions. Typical is the Angular-style project structure.</h2>
-    <p> After installation, the "Locate Angular files" submenu will be created under the navigate menu, including options for switching to various related files. </p>
-    <p> Default shortcut: </p>
+    <p><strong>Switch between files with the same file path and base name but different extensions. Typical is the Angular-style project structure.</strong></p>
+    <p>After installation, the "Locate Angular files" submenu will be created under the navigate menu, including options for switching to various related files.</p>
+    <p></p>
+    <p><strong>在文件路径和基本名相同, 但扩展名不同的文件之间切换。典型的就是 Angular 风格的项目结构。</strong></p>
+    <p>安装后会在 navigate 菜单下创建 "Locate Angular files" 子菜单，其中包括切换到各个相关文件的选项。</p>
+    <p></p>
+    <p>Default shortcuts:</p>
     <ul>
-    <li>Press ctrl(cmd)+l,h to open html file</li>
-    <li>Press ctrl(cmd)+l,c to open Css file</li>
-    <li>Press ctrl(cmd)+l,t to open the ts file</li>
-    <li>Press ctrl(cmd)+l,s to open the spec.ts file</li>
+    <li>Press CTRL(CMD)+L,H to open html file</li>
+    <li>Press CTRL(CMD)+L,C to open css file</li>
+    <li>Press CTRL(CMD)+L,T to open the ts file</li>
+    <li>Press CTRL(CMD)+L,S to open the spec.ts file</li>
     </ul>
-    <p> source code: <https://github.com/asnowwolf/angular-switch-extension>. </p>
-
-    <h2>在文件路径和基本名相同, 但扩展名不同的文件之间切换。典型的就是 Angular 风格的项目结构。</h2>
-    <p>
-    安装后会在 navigate 菜单下创建 "Locate Angular files" 子菜单，其中包括切换到各个相关文件的选项。
-    </p>
-    <p>
-    默认快捷键：
-    </p>
-    <ul>
-    <li>按 ctrl(cmd)+l,h 打开 html 文件</li>
-    <li>按 ctrl(cmd)+l,c 打开 css 文件</li>
-    <li>按 ctrl(cmd)+l,t 打开 ts 文件</li>
-    <li>按 ctrl(cmd)+l,s 打开 spec.ts 文件</li>
-    </ul>
-    <p>
-    source code: <https://github.com/asnowwolf/angular-switch-extension>.
-    </p>
+    <p>Source code: <a href="https://github.com/asnowwolf/angular-switch-extension">https://github.com/asnowwolf/angular-switch-extension</a>. </p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
     ]]></description>
 
     <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
@@ -59,19 +53,19 @@
         <group id="SwitchExtension" text="Locate Angular files" popup="true">
             <!-- Add your actions here -->
             <action id="live.angular.actions.SwitchToTemplate"
-                    class="live.angular.actions.SwitchToTemplate" text="*.html file">
+                    class="live.angular.actions.SwitchToTemplate" text="*.html file (CTRL/CMD-L,H)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="H"/>
             </action>
             <action id="live.angular.actions.SwitchToStyle"
-                    class="live.angular.actions.SwitchToStyle" text="*.css file">
+                    class="live.angular.actions.SwitchToStyle" text="*.css file (CTRL/CMD-L,C)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="C"/>
             </action>
             <action id="live.angular.actions.SwitchToTest"
-                    class="live.angular.actions.SwitchToTest" text="*.spec.ts file">
+                    class="live.angular.actions.SwitchToTest" text="*.spec.ts file (CTRL/CMD-L,S)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="S"/>
             </action>
             <action id="live.angular.actions.SwitchToComponent"
-                    class="live.angular.actions.SwitchToComponent" text="*.ts file">
+                    class="live.angular.actions.SwitchToComponent" text="*.ts file (CTRL/CMD-L,T)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="T"/>
             </action>
             <add-to-group group-id="GoToTargetEx" anchor="last"/>
