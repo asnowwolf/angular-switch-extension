@@ -18,6 +18,9 @@
     <li>Press CTRL(CMD)+L,T to open the ts file</li>
     <li>Press CTRL(CMD)+L,S to open the spec.ts file</li>
     </ul>
+    <p>Shortcuts for Mac OS X 10.5+ :</p>
+    <p>Use CTRL(CMD)+I instead of CTRL(CMD)+L.</p>
+    <p></p>
     <p>Source code: <a href="https://github.com/asnowwolf/angular-switch-extension">https://github.com/asnowwolf/angular-switch-extension</a>. </p>
     <p></p>
     <p></p>
@@ -57,18 +60,22 @@
             <action id="live.angular.actions.SwitchToTemplate"
                     class="live.angular.actions.SwitchToTemplate" text="*.html file (CTRL/CMD-L,H)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="H"/>
+                <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl I" second-keystroke="H"/>
             </action>
             <action id="live.angular.actions.SwitchToStyle"
                     class="live.angular.actions.SwitchToStyle" text="*.css file (CTRL/CMD-L,C)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="C"/>
+                <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl I" second-keystroke="C"/>
             </action>
             <action id="live.angular.actions.SwitchToTest"
                     class="live.angular.actions.SwitchToTest" text="*.spec.ts file (CTRL/CMD-L,S)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="S"/>
+                <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl I" second-keystroke="S"/>
             </action>
             <action id="live.angular.actions.SwitchToComponent"
                     class="live.angular.actions.SwitchToComponent" text="*.ts file (CTRL/CMD-L,T)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl L" second-keystroke="T"/>
+                <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl I" second-keystroke="T"/>
             </action>
             <add-to-group group-id="GoToTargetEx" anchor="last"/>
         </group>
