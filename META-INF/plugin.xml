@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>live.angular.switch.extension</id>
-    <name>angular-switch-extension</name>
+    <name>Angular-Switch-Extension</name>
     <version>0.3.1</version>
     <vendor email="asnowwolf@gmail.com" url="https://angular.cn">Zhicheng Wang</vendor>
 
@@ -55,25 +55,25 @@
     </project-components>
 
     <actions>
-        <group id="SwitchExtension" text="Locate Angular files" popup="true">
+        <group id="SwitchExtension" text="Locate Angular Files" popup="true">
             <!-- Add your actions here -->
             <action id="live.angular.actions.SwitchToTemplate"
-                    class="live.angular.actions.SwitchToTemplate" text="Jump to *.html file (CTRL/CMD-I,H)">
+                    class="live.angular.actions.SwitchToTemplate" text="Jump to *.html File (CTRL/CMD-I,H)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl I" second-keystroke="H"/>
                 <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl I" second-keystroke="H"/>
             </action>
             <action id="live.angular.actions.SwitchToStyle"
-                    class="live.angular.actions.SwitchToStyle" text="Jump to *.css file (CTRL/CMD-I,C)">
+                    class="live.angular.actions.SwitchToStyle" text="Jump to *.css File (CTRL/CMD-I,C)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl I" second-keystroke="C"/>
                 <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl I" second-keystroke="C"/>
             </action>
             <action id="live.angular.actions.SwitchToTest"
-                    class="live.angular.actions.SwitchToTest" text="Jump to *.spec.ts file (CTRL/CMD-I,S)">
+                    class="live.angular.actions.SwitchToTest" text="Jump to *.spec.Ts File (CTRL/CMD-I,S)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl I" second-keystroke="S"/>
                 <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl I" second-keystroke="S"/>
             </action>
             <action id="live.angular.actions.SwitchToComponent"
-                    class="live.angular.actions.SwitchToComponent" text="Jump to *.ts file (CTRL/CMD-I,T)">
+                    class="live.angular.actions.SwitchToComponent" text="Jump to *.ts File (CTRL/CMD-I,T)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl I" second-keystroke="T"/>
                 <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl I" second-keystroke="T"/>
             </action>

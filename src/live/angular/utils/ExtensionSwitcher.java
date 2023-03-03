@@ -14,7 +14,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class ExtensionSwitcher {
-    private AnActionEvent event;
+    private final AnActionEvent event;
 
     public ExtensionSwitcher(AnActionEvent event) {
         this.event = event;
@@ -42,21 +42,20 @@ public class ExtensionSwitcher {
         switchToGroup(testExtensions);
     }
 
-    private boolean switchToGroup(List<String> nextGroup) {
+    private void switchToGroup(List<String> nextGroup) {
         String basePath = getCurrentBasePath();
         for (String extension : nextGroup) {
             Optional<VirtualFile> file = findFileByPath(basePath + "." + extension);
             if (file.isPresent()) {
                 openFile(file.get());
-                return true;
+                return;
             }
         }
-        return false;
     }
 
     @NotNull
     private String getCurrentBasePath() {
-        return getCurrentFile().map(VirtualFile::getCanonicalPath).map(this::getNameWithoutExtension).get();
+        return getCurrentFile().map(VirtualFile::getCanonicalPath).map(this::getNameWithoutExtension).orElseThrow(BasePathNotFoundException::new);
     }
 
     String getExtension(String filename) {
