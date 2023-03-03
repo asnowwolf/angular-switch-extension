@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>live.angular.switch.extension</id>
     <name>Angular-Switch-Extension</name>
-    <version>0.3.1</version>
+    <version>0.4.0</version>
     <vendor email="asnowwolf@gmail.com" url="https://angular.cn">Zhicheng Wang</vendor>
 
     <description><![CDATA[
