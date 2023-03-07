@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>live.angular.switch.extension</id>
     <name>Angular-Switch-Extension</name>
-    <version>0.4.0</version>
+    <version>0.5.0</version>
     <vendor email="asnowwolf@gmail.com" url="https://angular.cn">Zhicheng Wang</vendor>
 
     <description><![CDATA[
@@ -13,7 +13,7 @@
     <p></p>
     <p>Default shortcuts:</p>
     <ul>
-    <li>Press CTRL(CMD)+I,H to open html file</li>
+    <li>Press CTRL(CMD)+I,H to open html/svg file</li>
     <li>Press CTRL(CMD)+I,C to open css file</li>
     <li>Press CTRL(CMD)+I,T to open the ts file</li>
     <li>Press CTRL(CMD)+I,S to open the spec.ts file</li>
@@ -58,7 +58,7 @@
         <group id="SwitchExtension" text="Locate Angular Files" popup="true">
             <!-- Add your actions here -->
             <action id="live.angular.actions.SwitchToTemplate"
-                    class="live.angular.actions.SwitchToTemplate" text="Jump to *.html File (CTRL/CMD-I,H)">
+                    class="live.angular.actions.SwitchToTemplate" text="Jump to *.html/*.svg File (CTRL/CMD-I,H)">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl I" second-keystroke="H"/>
                 <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl I" second-keystroke="H"/>
             </action>

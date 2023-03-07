@@ -20,7 +20,7 @@ public class ExtensionSwitcher {
         this.event = event;
     }
 
-    private final List<String> templateExtensions = Lists.newArrayList("html");
+    private final List<String> templateExtensions = Lists.newArrayList("html", "svg");
     private final List<String> componentExtensions = Lists.newArrayList("ts");
     private final List<String> testExtensions = Lists.newArrayList("spec.ts");
     private final List<String> styleExtensions = Lists.newArrayList("css", "scss", "less", "styl");
